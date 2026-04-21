@@ -1,0 +1,23 @@
+CREATE TABLE equipment (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  tenant_id UUID NOT NULL REFERENCES tenants(id),
+  department_id UUID REFERENCES departments(id),
+  vendor_id UUID REFERENCES vendors(id),
+  name VARCHAR(255) NOT NULL,
+  model VARCHAR(255),
+  manufacturer VARCHAR(255),
+  serial_number VARCHAR(255),
+  asset_tag VARCHAR(100),
+  purchase_date DATE,
+  purchase_cost DECIMAL(12,2),
+  expected_lifecycle_months INTEGER DEFAULT 120,
+  amc_start_date DATE,
+  amc_expiry_date DATE,
+  amc_cost DECIMAL(12,2),
+  recommended_maintenance_interval_days INTEGER DEFAULT 90,
+  location_description TEXT,
+  qr_code VARCHAR(255) UNIQUE,
+  status VARCHAR(50) NOT NULL DEFAULT 'active',
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);

@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mediguard-frontend
+  labels:
+    app: mediguard-frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mediguard-frontend
+  template:
+    metadata:
+      labels:
+        app: mediguard-frontend
+    spec:
+      containers:
+      - name: mediguard-frontend
+        image: mediguard/frontend:latest
+        ports:
+        - containerPort: 3000
+        env:
+        - name: NEXT_PUBLIC_API_URL
+          value: "https://api.mediguard.ai/api/v1"
+        resources:
+          limits:
+            cpu: "500m"
+            memory: "512Mi"
+          requests:
+            cpu: "250m"
+            memory: "256Mi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-service
+spec:
+  selector:
+    app: mediguard-frontend
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
