@@ -2,7 +2,7 @@
 
 > Predictive maintenance and operational intelligence for medical equipment fleets.
 
-![MediGuard repository cover](docs/assets/readme-cover.svg)
+
 
 [![Frontend](https://img.shields.io/badge/frontend-Next.js%20%26%20React-111827?style=for-the-badge)](#technology-stack)
 [![Backend](https://img.shields.io/badge/backend-Go%20%26%20Chi-0f766e?style=for-the-badge)](#technology-stack)
