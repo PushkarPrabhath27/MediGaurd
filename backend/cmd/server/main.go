@@ -10,7 +10,11 @@ import (
 
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
+	"github.com/go-chi/cors"
+	"github.com/mediguard/core/internal/analytics"
 	"github.com/mediguard/core/internal/auth"
+	"github.com/mediguard/core/internal/equipment"
+	"github.com/mediguard/core/internal/tenant"
 	"github.com/mediguard/core/internal/shared/db"
 	"github.com/mediguard/core/internal/shared/redis"
 	mgMiddleware "github.com/mediguard/core/internal/shared/middleware"
@@ -51,13 +55,33 @@ func main() {
 		log.Fatal().Err(err).Msg("Failed to initialize Redis")
 	}
 
-	// Initialize Services
+	// Initialize Repositories
 	authRepo := auth.NewAuthRepository(database)
+	equipmentRepo := equipment.NewEquipmentRepository(database)
+	tenantRepo := tenant.NewTenantRepository(database)
+	analyticsRepo := analytics.NewAnalyticsRepository(database)
+
+	// Initialize Services
 	authService := auth.NewAuthService(authRepo, jwtSecret)
+
+	// Initialize Handlers
 	authHandler := auth.NewAuthHandler(authService)
+	equipmentHandler := equipment.NewEquipmentHandler(equipmentRepo)
+	tenantHandler := tenant.NewTenantHandler(tenantRepo)
+	analyticsHandler := analytics.NewAnalyticsHandler(analyticsRepo)
 
 	// Router setup
 	r := chi.NewRouter()
+
+	// CORS Setup
+	r.Use(cors.Handler(cors.Options{
+		AllowedOrigins:   []string{"http://localhost:3000", "http://127.0.0.1:3000"},
+		AllowedMethods:   []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
+		AllowedHeaders:   []string{"Accept", "Authorization", "Content-Type", "X-CSRF-Token", "X-Tenant-Slug"},
+		ExposedHeaders:   []string{"Link"},
+		AllowCredentials: true,
+		MaxAge:           300,
+	}))
 
 	// Standard middleware
 	r.Use(middleware.RequestID)
@@ -76,10 +100,22 @@ func main() {
 	})
 
 	r.Route("/api/v1", func(r chi.Router) {
+		// Public Auth Routes
 		r.Route("/auth", func(r chi.Router) {
 			authHandler.RegisterRoutes(r)
 		})
+
+		// Protected Routes
+		r.Group(func(r chi.Router) {
+			r.Use(mgMiddleware.Auth([]byte(jwtSecret)))
+			
+			equipmentHandler.RegisterRoutes(r)
+			tenantHandler.RegisterRoutes(r)
+			analyticsHandler.RegisterRoutes(r)
+		})
 	})
+
+
 
 	// Server setup
 	srv := &http.Server{

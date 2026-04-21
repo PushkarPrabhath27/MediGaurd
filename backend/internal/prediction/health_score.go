@@ -1,15 +1,11 @@
 package prediction
 
 import (
-	"context"
-	"encoding/json"
 	"math"
 	"time"
 
 	"github.com/google/uuid"
 	"github.com/mediguard/core/internal/equipment"
-	"github.com/mediguard/core/internal/shared/db"
-	"github.com/mediguard/core/internal/shared/redis"
 	"github.com/rs/zerolog/log"
 )
 

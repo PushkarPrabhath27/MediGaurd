@@ -1,0 +1,23 @@
+[90m7:52PM[0m [32mINF[0m [1mConnecting to PostgreSQL...[0m
+[90m7:52PM[0m [32mINF[0m [1mSuccessfully connected to PostgreSQL[0m
+[90m7:52PM[0m [32mINF[0m [1mStarting database migrations...[0m
+[90m7:52PM[0m DBG Migration already applied, skipping [36mfile=[0m001_tenants.sql
+[90m7:52PM[0m DBG Migration already applied, skipping [36mfile=[0m002_users.sql
+[90m7:52PM[0m DBG Migration already applied, skipping [36mfile=[0m003_departments.sql
+[90m7:52PM[0m DBG Migration already applied, skipping [36mfile=[0m004_fk_constraints.sql
+[90m7:52PM[0m DBG Migration already applied, skipping [36mfile=[0m005_vendors.sql
+[90m7:52PM[0m DBG Migration already applied, skipping [36mfile=[0m006_equipment.sql
+[90m7:52PM[0m DBG Migration already applied, skipping [36mfile=[0m007_health_scores.sql
+[90m7:52PM[0m DBG Migration already applied, skipping [36mfile=[0m008_predictions.sql
+[90m7:52PM[0m DBG Migration already applied, skipping [36mfile=[0m009_maintenance_logs.sql
+[90m7:52PM[0m DBG Migration already applied, skipping [36mfile=[0m010_work_orders.sql
+[90m7:52PM[0m DBG Migration already applied, skipping [36mfile=[0m011_work_order_history.sql
+[90m7:52PM[0m DBG Migration already applied, skipping [36mfile=[0m012_alerts.sql
+[90m7:52PM[0m [32mINF[0m [1mAll migrations completed successfully[0m
+[90m7:52PM[0m [32mINF[0m [1mSuccessfully connected to Redis[0m
+[90m7:52PM[0m [32mINF[0m [1mServer starting on port 8082[0m
+[90m7:52PM[0m [32mINF[0m [1mRequest completed[0m [36mlatency=[0m1154.7246 [36mmethod=[0mPOST [36mpath=[0m/api/v1/auth/login [36mrequest_id=[0mc6c9fb02-e6e0-43d9-bb8e-5459b821d827
+[90m7:52PM[0m [32mINF[0m [1mRequest completed[0m [36mlatency=[0m119.8971 [36mmethod=[0mGET [36mpath=[0m/api/v1/analytics/stats [36mrequest_id=[0m469f56cc-077a-4c7e-bd1d-f3617bba272d
+[90m7:52PM[0m [32mINF[0m [1mRequest completed[0m [36mlatency=[0m262.2709 [36mmethod=[0mGET [36mpath=[0m/api/v1/equipment [36mrequest_id=[0m8dbebed4-16d4-4d5f-bd4f-747d884f56d6
+[90m7:52PM[0m [32mINF[0m [1mRequest completed[0m [36mlatency=[0m1882.806 [36mmethod=[0mPOST [36mpath=[0m/api/v1/auth/login [36mrequest_id=[0ma19bcf8a-af5e-462f-a50e-d692ee62eb04
+[90m7:52PM[0m [32mINF[0m [1mRequest completed[0m [36mlatency=[0m0 [36mmethod=[0mGET [36mpath=[0m/health [36mrequest_id=[0m4246b73a-f30d-49bf-a9f1-b9d38def8633

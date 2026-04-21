@@ -2,6 +2,7 @@ package redis
 
 import (
 	"context"
+	"crypto/tls"
 	"encoding/json"
 	"fmt"
 	"time"
@@ -14,11 +15,20 @@ var client *redis.Client
 
 // InitRedis initializes the Redis client
 func InitRedis(addr, password string) (*redis.Client, error) {
-	client = redis.NewClient(&redis.Options{
+	opts := &redis.Options{
 		Addr:     addr,
 		Password: password,
 		DB:       0,
-	})
+	}
+
+	// Enable TLS for cloud providers like Upstash
+	if addr != "localhost:6379" && addr != "redis:6379" {
+		opts.TLSConfig = &tls.Config{
+			InsecureSkipVerify: true, // For Upstash/Cloud standard
+		}
+	}
+
+	client = redis.NewClient(opts)
 
 	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 	defer cancel()

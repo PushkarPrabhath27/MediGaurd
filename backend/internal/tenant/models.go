@@ -1,11 +1,8 @@
 package tenant
 
 import (
-	"context"
 	"time"
-
 	"github.com/google/uuid"
-	"github.com/jmoiron/sqlx"
 )
 
 type Tenant struct {

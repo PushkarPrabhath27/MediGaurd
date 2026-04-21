@@ -1,0 +1,5 @@
+2026/04/21 19:49:32 [Phantom/a21ZbV9AaR-000001] "GET http://localhost:8081/health HTTP/1.1" from 127.0.0.1:62805 - 200 2B in 1.8185ms
+2026/04/21 19:49:46 [Phantom/a21ZbV9AaR-000002] "POST http://localhost:8081/api/v1/auth/login HTTP/1.1" from [::1]:62809 - 401 144B in 611.9001ms
+2026/04/21 19:49:46 [Phantom/a21ZbV9AaR-000004] "GET http://localhost:8081/api/v1/analytics/stats HTTP/1.1" from [::1]:62809 - 401 20B in 2.4481ms
+2026/04/21 19:49:46 [Phantom/a21ZbV9AaR-000005] "GET http://localhost:8081/api/v1/equipment HTTP/1.1" from [::1]:62809 - 401 20B in 1.2471ms
+2026/04/21 19:49:47 [Phantom/a21ZbV9AaR-000003] "POST http://localhost:8081/api/v1/auth/login HTTP/1.1" from [::1]:62810 - 401 144B in 1.3957184s

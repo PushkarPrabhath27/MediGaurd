@@ -26,6 +26,12 @@ type TokenPair struct {
 	ExpiresAt    time.Time `json:"expires_at"`
 }
 
+type LoginResponse struct {
+	Tokens *TokenPair `json:"tokens"`
+	User   *User      `json:"user"`
+}
+
+
 type Claims struct {
 	UserID   uuid.UUID `json:"user_id"`
 	TenantID uuid.UUID `json:"tenant_id"`
@@ -35,15 +41,16 @@ type Claims struct {
 }
 
 type User struct {
-	ID           uuid.UUID `db:"id" json:"id"`
-	TenantID     uuid.UUID `db:"tenant_id" json:"tenant_id"`
-	Email        string    `db:"email" json:"email"`
-	PasswordHash string    `db:"password_hash" json:"-"`
-	FirstName    string    `db:"first_name" json:"first_name"`
-	LastName     string    `db:"last_name" json:"last_name"`
-	Role         string    `db:"role" json:"role"`
+	ID           uuid.UUID  `db:"id" json:"id"`
+	TenantID     uuid.UUID  `db:"tenant_id" json:"tenant_id"`
+	Email        string     `db:"email" json:"email"`
+	PasswordHash string     `db:"password_hash" json:"-"`
+	FirstName    string     `db:"first_name" json:"first_name"`
+	LastName     string     `db:"last_name" json:"last_name"`
+	Role         string     `db:"role" json:"role"`
 	DepartmentID *uuid.UUID `db:"department_id" json:"department_id"`
-	IsActive     bool      `db:"is_active" json:"is_active"`
-	CreatedAt    time.Time `db:"created_at" json:"created_at"`
-	UpdatedAt    time.Time `db:"updated_at" json:"updated_at"`
+	IsActive     bool       `db:"is_active" json:"is_active"`
+	LastLoginAt  *time.Time `db:"last_login_at" json:"last_login_at"`
+	CreatedAt    time.Time  `db:"created_at" json:"created_at"`
+	UpdatedAt    time.Time  `db:"updated_at" json:"updated_at"`
 }

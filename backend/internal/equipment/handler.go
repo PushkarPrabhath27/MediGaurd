@@ -1,9 +1,6 @@
 package equipment
 
 import (
-	"context"
-	"fmt"
-
 	"github.com/go-chi/chi/v5"
 	"github.com/google/uuid"
 	"net/http"

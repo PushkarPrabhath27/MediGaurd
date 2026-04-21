@@ -1,7 +1,6 @@
 package tenant
 
 import (
-	"context"
 	"net/http"
 
 	"github.com/go-chi/chi/v5"
@@ -41,7 +40,7 @@ func (h *TenantHandler) ListTenants(w http.ResponseWriter, r *http.Request) {
 }
 
 func (h *TenantHandler) CreateDepartment(w http.ResponseWriter, r *http.Request) {
-	tenantID := r.Context().Value(mgMiddleware.TenantIDKey).(uuid.UUID)
+	// tenantID := r.Context().Value(mgMiddleware.TenantIDKey).(uuid.UUID)
 	// Implementation...
 }
 

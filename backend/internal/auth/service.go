@@ -3,7 +3,6 @@ package auth
 import (
 	"context"
 	"errors"
-	"fmt"
 	"time"
 
 	"github.com/golang-jwt/jwt/v5"
@@ -18,7 +17,7 @@ var (
 )
 
 type AuthService interface {
-	Login(ctx context.Context, req LoginRequest, tenantSlug string) (*TokenPair, error)
+	Login(ctx context.Context, req LoginRequest, tenantSlug string) (*LoginResponse, error)
 	Register(ctx context.Context, req RegisterRequest) error
 	RefreshToken(ctx context.Context, refreshToken string) (*TokenPair, error)
 	Logout(ctx context.Context, refreshToken string) error
@@ -36,7 +35,7 @@ func NewAuthService(repo AuthRepository, jwtSecret string) AuthService {
 	}
 }
 
-func (s *authService) Login(ctx context.Context, req LoginRequest, tenantSlug string) (*TokenPair, error) {
+func (s *authService) Login(ctx context.Context, req LoginRequest, tenantSlug string) (*LoginResponse, error) {
 	tenantID, err := s.repo.FindTenantBySlug(ctx, tenantSlug)
 	if err != nil {
 		return nil, ErrTenantNotFound
@@ -64,8 +63,12 @@ func (s *authService) Login(ctx context.Context, req LoginRequest, tenantSlug st
 
 	s.repo.UpdateLastLogin(ctx, user.ID)
 
-	return tokens, nil
+	return &LoginResponse{
+		Tokens: tokens,
+		User:   user,
+	}, nil
 }
+
 
 func (s *authService) Register(ctx context.Context, req RegisterRequest) error {
 	tenantID, err := s.repo.FindTenantBySlug(ctx, req.TenantSlug)
@@ -96,7 +99,7 @@ func (s *authService) Register(ctx context.Context, req RegisterRequest) error {
 }
 
 func (s *authService) RefreshToken(ctx context.Context, refreshToken string) (*TokenPair, error) {
-	userID, err := s.repo.ValidateRefreshToken(ctx, refreshToken)
+	_, err := s.repo.ValidateRefreshToken(ctx, refreshToken)
 	if err != nil {
 		return nil, errors.New("invalid refresh token")
 	}

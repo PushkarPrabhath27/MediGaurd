@@ -1,0 +1,5 @@
+2026/04/21 19:52:12 [Phantom/SsTiAEaP44-000001] "POST http://localhost:8082/api/v1/auth/login HTTP/1.1" from [::1]:54162 - 200 880B in 1.1557413s
+2026/04/21 19:52:13 [Phantom/SsTiAEaP44-000003] "GET http://localhost:8082/api/v1/analytics/stats HTTP/1.1" from [::1]:54162 - 200 394B in 120.91ms
+2026/04/21 19:52:13 [Phantom/SsTiAEaP44-000004] "GET http://localhost:8082/api/v1/equipment HTTP/1.1" from [::1]:54162 - 200 92B in 266.7629ms
+2026/04/21 19:52:13 [Phantom/SsTiAEaP44-000002] "POST http://localhost:8082/api/v1/auth/login HTTP/1.1" from [::1]:54163 - 200 905B in 1.883339s
+2026/04/21 19:52:17 [Phantom/SsTiAEaP44-000005] "GET http://localhost:8082/health HTTP/1.1" from [::1]:54165 - 200 2B in 510µs

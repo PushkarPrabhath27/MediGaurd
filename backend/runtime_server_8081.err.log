@@ -1,0 +1,23 @@
+[90m7:49PM[0m [32mINF[0m [1mConnecting to PostgreSQL...[0m
+[90m7:49PM[0m [32mINF[0m [1mSuccessfully connected to PostgreSQL[0m
+[90m7:49PM[0m [32mINF[0m [1mStarting database migrations...[0m
+[90m7:49PM[0m DBG Migration already applied, skipping [36mfile=[0m001_tenants.sql
+[90m7:49PM[0m DBG Migration already applied, skipping [36mfile=[0m002_users.sql
+[90m7:49PM[0m DBG Migration already applied, skipping [36mfile=[0m003_departments.sql
+[90m7:49PM[0m DBG Migration already applied, skipping [36mfile=[0m004_fk_constraints.sql
+[90m7:49PM[0m DBG Migration already applied, skipping [36mfile=[0m005_vendors.sql
+[90m7:49PM[0m DBG Migration already applied, skipping [36mfile=[0m006_equipment.sql
+[90m7:49PM[0m DBG Migration already applied, skipping [36mfile=[0m007_health_scores.sql
+[90m7:49PM[0m DBG Migration already applied, skipping [36mfile=[0m008_predictions.sql
+[90m7:49PM[0m DBG Migration already applied, skipping [36mfile=[0m009_maintenance_logs.sql
+[90m7:49PM[0m DBG Migration already applied, skipping [36mfile=[0m010_work_orders.sql
+[90m7:49PM[0m DBG Migration already applied, skipping [36mfile=[0m011_work_order_history.sql
+[90m7:49PM[0m DBG Migration already applied, skipping [36mfile=[0m012_alerts.sql
+[90m7:49PM[0m [32mINF[0m [1mAll migrations completed successfully[0m
+[90m7:49PM[0m [32mINF[0m [1mSuccessfully connected to Redis[0m
+[90m7:49PM[0m [32mINF[0m [1mServer starting on port 8081[0m
+[90m7:49PM[0m [32mINF[0m [1mRequest completed[0m [36mlatency=[0m0 [36mmethod=[0mGET [36mpath=[0m/health [36mrequest_id=[0mc3869392-229e-413c-af5c-455bcce32500
+[90m7:49PM[0m [32mINF[0m [1mRequest completed[0m [36mlatency=[0m606.8452 [36mmethod=[0mPOST [36mpath=[0m/api/v1/auth/login [36mrequest_id=[0mca9c6c68-71fb-415b-8ed9-06eec384161d
+[90m7:49PM[0m [32mINF[0m [1mRequest completed[0m [36mlatency=[0m0 [36mmethod=[0mGET [36mpath=[0m/api/v1/analytics/stats [36mrequest_id=[0m59087244-114e-4c02-8288-bb7f27e0f27a
+[90m7:49PM[0m [32mINF[0m [1mRequest completed[0m [36mlatency=[0m0 [36mmethod=[0mGET [36mpath=[0m/api/v1/equipment [36mrequest_id=[0m06cf5a79-a606-4285-b21a-8a271e77f39f
+[90m7:49PM[0m [32mINF[0m [1mRequest completed[0m [36mlatency=[0m1395.2084 [36mmethod=[0mPOST [36mpath=[0m/api/v1/auth/login [36mrequest_id=[0m7700a941-3f9e-4745-81e2-100d9defd072

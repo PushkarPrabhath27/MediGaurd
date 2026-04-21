@@ -2,12 +2,10 @@ package alert
 
 import (
 	"context"
-	"encoding/json"
 	"time"
 
 	"github.com/google/uuid"
 	"github.com/mediguard/core/internal/shared/redis"
-	"github.com/rs/zerolog/log"
 )
 
 type Alert struct {
