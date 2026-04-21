@@ -21,3 +21,4 @@
 [90m7:49PM[0m [32mINF[0m [1mRequest completed[0m [36mlatency=[0m0 [36mmethod=[0mGET [36mpath=[0m/api/v1/analytics/stats [36mrequest_id=[0m59087244-114e-4c02-8288-bb7f27e0f27a
 [90m7:49PM[0m [32mINF[0m [1mRequest completed[0m [36mlatency=[0m0 [36mmethod=[0mGET [36mpath=[0m/api/v1/equipment [36mrequest_id=[0m06cf5a79-a606-4285-b21a-8a271e77f39f
 [90m7:49PM[0m [32mINF[0m [1mRequest completed[0m [36mlatency=[0m1395.2084 [36mmethod=[0mPOST [36mpath=[0m/api/v1/auth/login [36mrequest_id=[0m7700a941-3f9e-4745-81e2-100d9defd072
+exit status 1

@@ -1,8 +1,6 @@
 # MediGuard
 
-<p align="center">
-  <img src="docs/assets/readme-cover.svg" alt="MediGuard cover art" width="100%" />
-</p>
+
 
 <p align="center">
   Predictive maintenance, reliability intelligence, and operational visibility for medical equipment fleets.
