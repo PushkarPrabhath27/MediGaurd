@@ -2,28 +2,28 @@
 
 ## Getting Help
 
-For usage questions, setup issues, or contribution guidance:
+For setup questions, development issues, or usage guidance:
 
-- open a GitHub issue for general product or development questions
-- open a pull request if you already have a fix or improvement prepared
+- open a GitHub issue for general support requests
+- open a pull request if you already have a proposed fix or improvement
 
-## Before You Ask
+## Before Opening a Request
 
-Please check:
+Please review:
 
 - the [README](README.md)
-- existing issues
-- environment configuration in `.env.example`
-- local validation commands for frontend and backend
+- existing issues and pull requests
+- `.env.example` for expected configuration
+- frontend and backend validation commands
 
-## Security Issues
+## Helpful Support Requests Include
 
-For security-related concerns, follow [SECURITY.md](SECURITY.md) and avoid posting exploit details publicly.
+- a concise description of the problem
+- reproduction steps
+- logs or command output
+- screenshots or video for UI issues
+- operating system, runtime versions, and relevant environment details
 
-## Good Support Requests Include
+## Security Concerns
 
-- the problem statement
-- steps you already tried
-- command output or logs
-- screenshots for UI problems
-- your operating system, runtime versions, and relevant environment details
+For security-related issues, do not share exploit details publicly. Follow the process in [SECURITY.md](SECURITY.md).

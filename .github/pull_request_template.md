@@ -1,23 +1,25 @@
 ## Summary
 
-- Describe the change clearly.
-- Explain why it was needed.
+Describe the change clearly and explain the problem it solves.
 
-## What Changed
+## Scope
 
-- 
+- What changed:
+- Why it changed:
+- Anything intentionally left out:
 
 ## Validation
 
-- [ ] Frontend linted
-- [ ] Frontend built
-- [ ] Backend tests passed
-- [ ] Screenshots or demo notes added when relevant
+- [ ] `cd frontend && npm run lint`
+- [ ] `cd frontend && npm run build`
+- [ ] `cd backend && go test ./...`
+- [ ] Screenshots, video, or demo notes added when relevant
 
-## Screenshots or Demo
+## UI Evidence
 
-Add screenshots, recordings, or links when the change affects the UI or developer workflow.
+Attach screenshots or short recordings for user-facing changes.
 
-## Risks or Follow-ups
+## Risks and Follow-ups
 
-- 
+- Risks:
+- Follow-up work:

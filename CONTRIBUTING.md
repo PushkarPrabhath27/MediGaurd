@@ -1,28 +1,29 @@
 # Contributing to MediGuard
 
-Thank you for contributing to MediGuard. This repository is intended to demonstrate strong engineering discipline as well as product quality, so contributions should improve both functionality and maintainability.
+Thank you for helping improve MediGuard. This project aims to present both strong engineering practice and a polished product experience, so contributions should raise the quality bar in code, documentation, and usability.
 
-## Principles
+## Contribution Principles
 
-- Prioritize clarity over cleverness.
-- Preserve a professional product experience across backend and frontend work.
-- Keep commits focused and easy to review.
-- Treat reliability, patient-impacting workflows, and security-sensitive paths with extra care.
+- Prefer clarity, correctness, and maintainability over clever implementation.
+- Protect the product experience across both frontend and backend changes.
+- Keep pull requests focused, reviewable, and well-explained.
+- Treat reliability, tenant isolation, and security-sensitive paths with extra care.
+- Document behavior changes that affect setup, workflows, or operations.
 
-## Getting Started
+## Before You Start
 
-1. Fork or branch from the latest default branch.
-2. Read the [README](README.md) for project setup and local development instructions.
-3. Seed the local environment if you need demo authentication data.
-4. Make changes in small, reviewable increments.
+1. Review the [README](README.md) for architecture and setup.
+2. Sync from the latest default branch before starting work.
+3. Create a focused branch for your change.
+4. Seed demo data locally if you need the authenticated flows.
 
-## Development Expectations
+## Development Standards
 
 ### Frontend
 
-- Maintain a polished, intentional user experience.
-- Avoid placeholder-feeling UI when a clearer product workflow can be shown.
-- Run:
+- Preserve a clean, professional interface and avoid placeholder-grade UX.
+- Keep copy, spacing, and empty states intentional.
+- Validate your changes before opening a PR:
 
 ```bash
 cd frontend
@@ -32,41 +33,42 @@ npm run build
 
 ### Backend
 
-- Keep handlers, services, and repositories consistent with existing structure.
-- Favor explicit error handling and clear API responses.
-- Run:
+- Keep handlers, repositories, and service boundaries consistent with the existing structure.
+- Favor explicit errors, predictable API behavior, and readable SQL or data access logic.
+- Validate backend work locally:
 
 ```bash
 cd backend
 go test ./...
 ```
 
-## Pull Request Guidelines
+## Pull Request Expectations
 
-Please make sure your pull request:
+Each pull request should:
 
-- has a clear and specific title
-- explains what changed and why
-- notes any setup, migration, or environment changes
-- includes screenshots or short video captures for UI work when relevant
-- avoids unrelated formatting churn
+- use a clear, specific title
+- explain what changed and why it matters
+- call out setup, schema, or environment changes
+- include screenshots or a short recording for UI-impacting work
+- avoid unrelated cleanup mixed into the same branch
 
-## Code Style
+## Commit and Review Hygiene
 
-- Follow existing naming and module conventions.
-- Prefer readable, production-appropriate defaults.
-- Do not commit secrets, local environment files, or generated artifacts.
+- Keep commits intentional and easy to follow.
+- Do not commit secrets, `.env` files, build output, or machine-specific artifacts.
+- If the change is large, break it into smaller reviewable units where possible.
+- Mention follow-up work explicitly instead of leaving reviewers to infer it.
 
-## Reporting Issues
+## Issue Reporting
 
-When opening an issue or bug report, include:
+When reporting a bug, include:
 
-- what you expected to happen
-- what actually happened
-- steps to reproduce
-- relevant environment details
-- screenshots or logs when useful
+- expected behavior
+- actual behavior
+- clear reproduction steps
+- runtime or environment details
+- logs, screenshots, or videos when helpful
 
 ## Security
 
-If you discover a security issue, please follow the guidance in [SECURITY.md](SECURITY.md) instead of opening a public issue immediately.
+For security concerns, do not open a public issue with sensitive details. Follow the process in [SECURITY.md](SECURITY.md).

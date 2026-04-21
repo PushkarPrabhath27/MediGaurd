@@ -1,0 +1,49 @@
+name: Bug report
+description: Report a reproducible problem in MediGuard
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: Describe the bug clearly and concisely.
+      placeholder: The dashboard fails to load predictions after login.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Provide a reliable sequence so the issue can be reproduced.
+      placeholder: |
+        1. Start the backend
+        2. Log in with the seeded demo account
+        3. Open the predictions page
+        4. Observe the error
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Logs, screenshots, or recordings
+      description: Paste logs or attach visuals that help explain the issue.
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Include OS, browser, Node version, Go version, or container details when relevant.
+      placeholder: Windows 11, Chrome 135, Node 22, Go 1.25

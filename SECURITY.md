@@ -2,38 +2,36 @@
 
 ## Supported Use
 
-This repository is a project codebase and should not be treated as production-hardened medical infrastructure without further review, testing, and operational controls.
+MediGuard is a project repository and reference implementation. It should not be treated as production-ready medical infrastructure without additional hardening, security review, compliance work, and operational controls.
 
 ## Reporting a Vulnerability
 
-If you identify a security issue, please do not open a public issue with exploit details.
+Please do not open a public issue containing exploit details.
 
-Instead, report it privately with:
+Instead, report security concerns privately and include:
 
-- a concise description of the issue
-- affected component or file paths
+- a concise summary of the issue
+- affected components or file paths
 - reproduction steps or proof of concept
-- impact assessment
-- any suggested mitigation
+- potential impact
+- suggested mitigation, if available
 
-Use the private support path documented in [SUPPORT.md](SUPPORT.md).
+Use the private reporting path described in [SUPPORT.md](SUPPORT.md).
 
-## What to Expect
+## Triage Process
 
-After a report is received:
+After a report is received, maintainers will:
 
-1. The issue will be reviewed and triaged.
-2. Severity and impact will be assessed.
-3. A mitigation or fix plan will be prepared.
-4. Disclosure timing will be coordinated when appropriate.
+1. review and triage the report
+2. assess severity and impact
+3. prepare or prioritize a mitigation plan
+4. coordinate disclosure timing when appropriate
 
-## Sensitive Areas
+## Areas of Particular Interest
 
-Please pay special attention to:
-
-- authentication and token handling
-- tenant isolation
-- environment variable and secret management
-- database access paths
-- Redis connectivity and real-time channels
-- deployment manifests and exposed infrastructure settings
+- authentication and session or token handling
+- tenant isolation and authorization boundaries
+- database access and migration safety
+- environment variables, secrets, and credential handling
+- Redis-backed messaging or alert pathways
+- container and Kubernetes deployment configuration
