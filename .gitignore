@@ -1,0 +1,60 @@
+# Operating system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Environment and secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Node / frontend
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/build/
+frontend/coverage/
+frontend/*.tsbuildinfo
+
+# Go / backend
+backend/bin/
+backend/dist/
+backend/coverage.out
+backend/*.exe
+backend/*.exe~
+backend/*.dll
+backend/*.so
+backend/*.dylib
+
+# Local runtime artifacts
+backend/server
+backend/test_server
+backend/run_log.txt
+backend/server_log.txt
+backend/test_run_log.txt
+
+# IDE and editor files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+*.tmp
+
+# Misc build output
+coverage/
+dist/
+build/
+tmp/
+temp/

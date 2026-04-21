@@ -10,6 +10,12 @@ const predictions = [
   { asset: "Ventilation Pump", location: "Surgery Recovery", probability: "51%", eta: "7 days", severity: "Monitor" },
 ];
 
+const modelSignals = [
+  { label: "High confidence cases", value: "18" },
+  { label: "Watchlist devices", value: "42" },
+  { label: "Recommended interventions", value: "11" },
+];
+
 export default function PredictionsPage() {
   return (
     <div className="space-y-6 pb-10">
@@ -95,6 +101,21 @@ export default function PredictionsPage() {
           </CardContent>
         </Card>
       </div>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Model operations summary</CardTitle>
+          <CardDescription>Make the prediction engine feel like a working decision system, not a placeholder.</CardDescription>
+        </CardHeader>
+        <CardContent className="grid gap-4 md:grid-cols-3">
+          {modelSignals.map((item) => (
+            <div key={item.label} className="rounded-[24px] border border-border/80 bg-white/70 p-5">
+              <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">{item.label}</p>
+              <p className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">{item.value}</p>
+            </div>
+          ))}
+        </CardContent>
+      </Card>
     </div>
   );
 }

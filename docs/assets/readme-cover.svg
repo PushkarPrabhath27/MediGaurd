@@ -1,0 +1,107 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="120" y1="80" x2="1480" y2="860" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F7FBF9"/>
+      <stop offset="1" stop-color="#E8F4EE"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="315" y1="170" x2="1310" y2="790" gradientUnits="userSpaceOnUse">
+      <stop stop-color="white" stop-opacity="0.96"/>
+      <stop offset="1" stop-color="#F4FBF7" stop-opacity="0.92"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#0F766E"/>
+      <stop offset="1" stop-color="#22C55E"/>
+    </linearGradient>
+    <linearGradient id="darkPanel" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#0F172A"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <filter id="shadow" x="240" y="120" width="1120" height="700" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="24"/>
+      <feGaussianBlur stdDeviation="28"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.0627451 0 0 0 0 0.137255 0 0 0 0 0.101961 0 0 0 0.12 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1_2"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1_2" result="shape"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="188" cy="132" r="200" fill="#0F766E" fill-opacity="0.08"/>
+  <circle cx="1420" cy="160" r="160" fill="#22C55E" fill-opacity="0.1"/>
+  <circle cx="1470" cy="768" r="220" fill="#0EA5E9" fill-opacity="0.08"/>
+
+  <g opacity="0.28">
+    <path d="M0 140H1600" stroke="#B8D1C6"/>
+    <path d="M0 260H1600" stroke="#B8D1C6"/>
+    <path d="M0 380H1600" stroke="#B8D1C6"/>
+    <path d="M0 500H1600" stroke="#B8D1C6"/>
+    <path d="M0 620H1600" stroke="#B8D1C6"/>
+    <path d="M0 740H1600" stroke="#B8D1C6"/>
+    <path d="M180 0V900" stroke="#B8D1C6"/>
+    <path d="M360 0V900" stroke="#B8D1C6"/>
+    <path d="M540 0V900" stroke="#B8D1C6"/>
+    <path d="M720 0V900" stroke="#B8D1C6"/>
+    <path d="M900 0V900" stroke="#B8D1C6"/>
+    <path d="M1080 0V900" stroke="#B8D1C6"/>
+    <path d="M1260 0V900" stroke="#B8D1C6"/>
+    <path d="M1440 0V900" stroke="#B8D1C6"/>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="280" y="150" width="1040" height="620" rx="34" fill="url(#panel)"/>
+    <rect x="280" y="150" width="1040" height="620" rx="34" stroke="#D5E5DC"/>
+  </g>
+
+  <rect x="320" y="190" width="250" height="540" rx="28" fill="url(#darkPanel)"/>
+  <rect x="610" y="190" width="670" height="102" rx="28" fill="#FFFFFF" fill-opacity="0.86" stroke="#D8E5DE"/>
+  <rect x="610" y="322" width="430" height="180" rx="28" fill="#FFFFFF" fill-opacity="0.92" stroke="#D8E5DE"/>
+  <rect x="1060" y="322" width="220" height="180" rx="28" fill="#F5FBF7" stroke="#D8E5DE"/>
+  <rect x="610" y="532" width="320" height="160" rx="28" fill="#FFFFFF" fill-opacity="0.92" stroke="#D8E5DE"/>
+  <rect x="950" y="532" width="330" height="160" rx="28" fill="#FFFFFF" fill-opacity="0.92" stroke="#D8E5DE"/>
+
+  <rect x="350" y="230" width="40" height="40" rx="14" fill="#FFFFFF"/>
+  <text x="410" y="258" fill="#F8FAFC" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">MediGuard</text>
+  <text x="350" y="305" fill="#94A3B8" font-family="Arial, Helvetica, sans-serif" font-size="18">Equipment</text>
+  <text x="350" y="365" fill="#94A3B8" font-family="Arial, Helvetica, sans-serif" font-size="18">Maintenance</text>
+  <text x="350" y="425" fill="#94A3B8" font-family="Arial, Helvetica, sans-serif" font-size="18">Predictions</text>
+  <rect x="336" y="462" width="220" height="56" rx="20" fill="#FFFFFF"/>
+  <text x="376" y="497" fill="#0F172A" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="600">Analytics</text>
+
+  <text x="650" y="245" fill="#64748B" font-family="Arial, Helvetica, sans-serif" font-size="16" letter-spacing="3">MEDICAL ASSET INTELLIGENCE</text>
+  <text x="650" y="275" fill="#0F172A" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="700">Predictive maintenance for hospital operations</text>
+  <rect x="1130" y="219" width="110" height="42" rx="21" fill="#DCFCE7"/>
+  <text x="1159" y="246" fill="#166534" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="600">Live</text>
+
+  <text x="650" y="365" fill="#64748B" font-family="Arial, Helvetica, sans-serif" font-size="16" letter-spacing="3">RELIABILITY TREND</text>
+  <text x="650" y="405" fill="#0F172A" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700">142 days</text>
+  <text x="650" y="438" fill="#64748B" font-family="Arial, Helvetica, sans-serif" font-size="20">Mean time between failures</text>
+  <path d="M650 472C720 452 770 458 826 430C870 408 930 368 1000 350" stroke="url(#accent)" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="650" cy="472" r="10" fill="#F8FAFC" stroke="#0F766E" stroke-width="6"/>
+  <circle cx="826" cy="430" r="10" fill="#F8FAFC" stroke="#0F766E" stroke-width="6"/>
+  <circle cx="1000" cy="350" r="10" fill="#F8FAFC" stroke="#0F766E" stroke-width="6"/>
+
+  <text x="1096" y="365" fill="#64748B" font-family="Arial, Helvetica, sans-serif" font-size="16" letter-spacing="2">ALERTS</text>
+  <text x="1096" y="408" fill="#0F172A" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700">14</text>
+  <text x="1096" y="438" fill="#64748B" font-family="Arial, Helvetica, sans-serif" font-size="18">Critical health states</text>
+  <rect x="1098" y="456" width="130" height="16" rx="8" fill="#E2E8F0"/>
+  <rect x="1098" y="456" width="96" height="16" rx="8" fill="#F59E0B"/>
+
+  <text x="640" y="585" fill="#64748B" font-family="Arial, Helvetica, sans-serif" font-size="16" letter-spacing="2">DEPARTMENT SPLIT</text>
+  <circle cx="735" cy="624" r="52" fill="none" stroke="#CBD5E1" stroke-width="24"/>
+  <path d="M735 572 A52 52 0 0 1 786 617" fill="none" stroke="#0F766E" stroke-width="24" stroke-linecap="round"/>
+  <path d="M786 617 A52 52 0 0 1 747 675" fill="none" stroke="#10B981" stroke-width="24" stroke-linecap="round"/>
+  <path d="M747 675 A52 52 0 0 1 699 657" fill="none" stroke="#06B6D4" stroke-width="24" stroke-linecap="round"/>
+  <text x="818" y="615" fill="#0F172A" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">Radiology</text>
+  <text x="818" y="647" fill="#64748B" font-family="Arial, Helvetica, sans-serif" font-size="18">34% of installed base</text>
+
+  <text x="980" y="585" fill="#64748B" font-family="Arial, Helvetica, sans-serif" font-size="16" letter-spacing="2">TOP ACTION</text>
+  <text x="980" y="625" fill="#0F172A" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">Review MRI Scanner 4B</text>
+  <text x="980" y="662" fill="#64748B" font-family="Arial, Helvetica, sans-serif" font-size="20">Failure probability elevated within 48 hours</text>
+  <rect x="982" y="682" width="190" height="14" rx="7" fill="#E2E8F0"/>
+  <rect x="982" y="682" width="154" height="14" rx="7" fill="url(#accent)"/>
+
+  <text x="282" y="102" fill="#0F172A" font-family="Arial, Helvetica, sans-serif" font-size="68" font-weight="700">MediGuard</text>
+  <text x="282" y="132" fill="#4B6358" font-family="Arial, Helvetica, sans-serif" font-size="28">A professional reliability platform for medical equipment operations.</text>
+</svg>

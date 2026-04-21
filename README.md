@@ -1,67 +1,254 @@
-# 🏥 MediGuard
+# MediGuard
 
-**AI-Driven Medical Equipment Failure Prediction & Management Platform**
+> Predictive maintenance and operational intelligence for medical equipment fleets.
 
-MediGuard is a multi-tenant SaaS platform built for hospitals and diagnostic labs to proactively predict medical equipment failures before they happen. By transitioning from a reactive to a predictive maintenance model, MediGuard helps healthcare facilities reduce equipment downtime, optimize maintenance costs, and ultimately protect patient lives.
+![MediGuard repository cover](docs/assets/readme-cover.svg)
 
-## 🚀 Key Features
+[![Frontend](https://img.shields.io/badge/frontend-Next.js%20%26%20React-111827?style=for-the-badge)](#technology-stack)
+[![Backend](https://img.shields.io/badge/backend-Go%20%26%20Chi-0f766e?style=for-the-badge)](#technology-stack)
+[![Database](https://img.shields.io/badge/database-PostgreSQL-1d4ed8?style=for-the-badge)](#technology-stack)
+[![Cache](https://img.shields.io/badge/cache-Redis-dc2626?style=for-the-badge)](#technology-stack)
+[![License](https://img.shields.io/badge/license-MIT-16a34a?style=for-the-badge)](LICENSE)
 
-- **Predictive Maintenance:** AI-driven health scoring (0-100) and failure prediction for critical medical devices based on historical patterns.
-- **Equipment Registry:** Comprehensive management system with QR code generation for instant device health checks.
-- **Automated Work Orders:** SLA-backed automated ticketing system for biomedical engineers.
-- **Real-Time Alerts:** Redis Pub/Sub powered instant notifications for critical equipment states.
-- **Multi-Tenant Architecture:** Secure, isolated environments allowing multiple hospital branches to operate under one platform.
-- **Analytics Dashboard:** Insights into Mean Time Between Failures (MTBF), maintenance costs, and AMC renewals.
+MediGuard is a multi-tenant platform for hospitals, diagnostic centers, and biomedical engineering teams that need to move from reactive maintenance to proactive equipment reliability management. It combines asset visibility, predictive failure scoring, maintenance workflows, and leadership-ready analytics in one product.
 
-## 🛠️ Tech Stack
+## Overview
 
-- **Frontend:** Next.js 14 (App Router), React, Tailwind CSS, shadcn/ui
-- **Backend:** Go (Golang) Microservices, `net/http` + `chi` router
-- **Database:** PostgreSQL 15
-- **Caching & Pub/Sub:** Redis 7
-- **Infrastructure:** Docker, Kubernetes (AKS ready)
+Modern clinical environments cannot afford downtime on high-value and high-dependency devices such as MRI systems, ventilators, infusion pumps, imaging assets, and diagnostic infrastructure. MediGuard is designed to help operators:
 
-## 📦 Getting Started
+- monitor equipment health across departments
+- surface elevated failure risk before disruptions occur
+- coordinate maintenance action with operational context
+- centralize asset intelligence for clinical engineering teams
+- present meaningful performance insights to leadership
 
-### Prerequisites
-- Docker & Docker Compose
-- Go 1.21+
-- Node.js 18+
+## Demo
 
-### Quick Start (Docker)
+The repository includes a product demo video:
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/mediguard.git
-   cd mediguard
-   ```
+- [Watch the MediGuard demo video](docs/assets/MediGuardDemo.mp4)
 
-2. Set up environment variables:
-   ```bash
-   cp .env.example .env
-   ```
+If your GitHub client supports inline HTML video preview, you can also use the player below.
 
-3. Spin up the infrastructure and services:
-   ```bash
-   docker-compose up -d
-   ```
+<video src="docs/assets/MediGuardDemo.mp4" controls width="100%"></video>
 
-4. The platform will be available at:
-   - Frontend: `http://localhost:3000`
-   - API Gateway: `http://localhost:8080`
+## Highlights
 
-## 🗄️ Project Structure
+- Predictive maintenance workflows with health scoring and failure-risk surfacing
+- Equipment registry for tracking devices, departments, models, and status
+- Maintenance orchestration views for scheduling and service execution
+- Analytics dashboards for reliability, department distribution, and operational reporting
+- Multi-tenant backend architecture for isolated hospital environments
+- Real-time alerting foundations using Redis Pub/Sub
+- Kubernetes and Docker deployment assets for local and cloud environments
+
+## Product Experience
+
+The current application includes:
+
+- a polished landing page and login experience
+- an executive-style dashboard for reliability monitoring
+- equipment inventory views with operational empty states and demo-ready fallback content
+- maintenance, predictions, and analytics pages that feel presentation-ready and product-complete
+- seeded authentication flow for demo and local evaluation
+
+## Technology Stack
+
+### Frontend
+
+- Next.js App Router
+- React
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+
+### Backend
+
+- Go
+- Chi router
+- SQLX
+- JWT-based authentication
+
+### Data and Infrastructure
+
+- PostgreSQL
+- Redis
+- Docker Compose
+- Kubernetes manifests
+
+## Repository Structure
+
 ```text
 mediguard/
-├── backend/          # Go microservices (Auth, Equipment, Maintenance, etc.)
-├── frontend/         # Next.js web application
-├── k8s/              # Kubernetes deployment manifests
-├── .github/          # GitHub Actions CI/CD workflows
-└── docker-compose.yml
+├── backend/             # Go backend, migrations, seed script, and API modules
+├── frontend/            # Next.js application and UI
+├── k8s/                 # Kubernetes deployment manifests
+├── docs/
+│   └── assets/          # Demo media and documentation assets
+├── .github/             # GitHub repository templates and workflow-ready metadata
+├── docker-compose.yml   # Local multi-service orchestration
+├── .env.example         # Example environment variables
+└── README.md
 ```
 
-## 🤝 Contributing
-Contributions are welcome! Please feel free to submit a Pull Request.
+## Core Modules
 
-## 📄 License
-This project is licensed under the MIT License.
+### Backend domains
+
+- `auth`: login, tenant-aware access, token generation
+- `equipment`: inventory retrieval and equipment metadata handling
+- `analytics`: dashboard summary and reporting endpoints
+- `prediction`: health scoring and prediction logic
+- `workorder`: maintenance lifecycle and status transitions
+- `alert`: real-time notification groundwork
+
+### Frontend routes
+
+- `/`: landing page
+- `/login`: authentication experience
+- `/dashboard`: operational overview
+- `/dashboard/equipment`: asset registry and inventory workflow
+- `/dashboard/maintenance`: service coordination
+- `/dashboard/predictions`: predictive maintenance insights
+- `/dashboard/analytics`: reliability and executive reporting
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- npm
+- Go 1.21+
+- PostgreSQL
+- Redis
+
+### 1. Clone the repository
+
+```bash
+git clone <your-repository-url>
+cd mediguard
+```
+
+### 2. Configure environment variables
+
+Create a local `.env` file from the provided example:
+
+```bash
+cp .env.example .env
+```
+
+Populate the backend variables as needed for your local or hosted services.
+
+### 3. Start the backend
+
+From the `backend` directory:
+
+```bash
+go run ./cmd/server
+```
+
+The backend reads environment variables such as:
+
+- `DATABASE_URL`
+- `REDIS_ADDR`
+- `REDIS_PASSWORD`
+- `JWT_SECRET`
+- `PORT`
+
+### 4. Seed demo data
+
+To create or refresh the demo tenant and administrator account:
+
+```bash
+cd backend
+go run seed.go
+```
+
+Demo credentials:
+
+- Tenant slug: `city-general`
+- Email: `admin@citygeneral.com`
+- Password: `password123`
+
+### 5. Start the frontend
+
+From the `frontend` directory:
+
+```bash
+npm install
+npm run dev
+```
+
+By default, the app will be available at:
+
+- Frontend: `http://localhost:3000`
+- Backend health endpoint: `http://localhost:8080/health`
+
+## Docker Compose
+
+You can also use Docker Compose for a local multi-service environment:
+
+```bash
+docker compose up --build
+```
+
+Services included:
+
+- PostgreSQL
+- Redis
+- Backend
+- Frontend
+
+## Development Notes
+
+- The backend includes SQL migrations under `backend/migrations`
+- The seed script is idempotent enough for repeated demo setup
+- The frontend includes operational fallback content so the product still feels complete when some datasets are sparse
+- Environment-specific values should remain outside the repository and never be committed via `.env`
+
+## Quality Checks
+
+Recommended local validation:
+
+### Frontend
+
+```bash
+cd frontend
+npm run lint
+npm run build
+```
+
+### Backend
+
+```bash
+cd backend
+go test ./...
+```
+
+## Deployment Direction
+
+This repository already includes:
+
+- Dockerfiles for frontend and backend services
+- Kubernetes deployment manifests under `k8s/`
+- a structure that can be extended for CI/CD workflows and environment promotion
+
+For production use, recommended next steps include:
+
+- secrets management through a secure vault or platform secret store
+- production-grade logging and tracing
+- stronger observability around prediction execution and alert delivery
+- automated CI pipelines for frontend and backend validation
+
+## Documentation and Repository Standards
+
+Additional repository guidance is provided in:
+
+- [CONTRIBUTING.md](CONTRIBUTING.md)
+- [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
+- [SECURITY.md](SECURITY.md)
+- [SUPPORT.md](SUPPORT.md)
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).

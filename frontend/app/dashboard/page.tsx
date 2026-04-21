@@ -41,6 +41,12 @@ const serviceTimeline = [
   { title: "High-risk alert acknowledged", detail: "MRI Scanner 4B", time: "3 hr ago" },
 ];
 
+const nextActions = [
+  "Review the critical MRI alert and assign field engineering coverage.",
+  "Confirm the next-day maintenance queue has parts reserved.",
+  "Audit any asset with health below 60 before tomorrow's morning shift.",
+];
+
 export default function DashboardPage() {
   const [stats, setStats] = useState<DashboardStats | null>(null);
   const [isFetching, setIsFetching] = useState(false);
@@ -267,6 +273,23 @@ export default function DashboardPage() {
           </CardContent>
         </Card>
       </section>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Recommended next actions</CardTitle>
+          <CardDescription>Give the user a clear answer to what should happen after landing on the dashboard.</CardDescription>
+        </CardHeader>
+        <CardContent className="grid gap-4 md:grid-cols-3">
+          {nextActions.map((action, index) => (
+            <div key={action} className="rounded-[24px] border border-border/80 bg-white/70 p-5">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-teal-50 text-sm font-semibold text-primary">
+                0{index + 1}
+              </div>
+              <p className="mt-4 text-sm leading-7 text-slate-700">{action}</p>
+            </div>
+          ))}
+        </CardContent>
+      </Card>
     </div>
   );
 }

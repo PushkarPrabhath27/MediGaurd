@@ -16,6 +16,12 @@ const summary = [
   { label: "Overdue", value: "2", tone: "bg-red-50 text-red-700" },
 ];
 
+const workflowSteps = [
+  "Review predicted failures and overdue preventive work.",
+  "Assign engineers, confirm parts, and lock service windows.",
+  "Close work with calibration proof and audit notes.",
+];
+
 export default function MaintenancePage() {
   return (
     <div className="space-y-6 pb-10">
@@ -96,6 +102,23 @@ export default function MaintenancePage() {
           </CardContent>
         </Card>
       </div>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>How this page is used</CardTitle>
+          <CardDescription>Turn service demand into an actual operating workflow for the team.</CardDescription>
+        </CardHeader>
+        <CardContent className="grid gap-4 md:grid-cols-3">
+          {workflowSteps.map((step, index) => (
+            <div key={step} className="rounded-[24px] border border-border/80 bg-white/70 p-5">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-teal-50 text-sm font-semibold text-primary">
+                0{index + 1}
+              </div>
+              <p className="mt-4 text-sm leading-7 text-slate-700">{step}</p>
+            </div>
+          ))}
+        </CardContent>
+      </Card>
     </div>
   );
 }
